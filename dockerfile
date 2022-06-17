@@ -1,5 +1,12 @@
-FROM alpine
+FROM node:latest
+
 WORKDIR /usr/src/app
+
 COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
 EXPOSE 4000
-CMD ["java","-jar","/home/spring-petclinic-1.5.1.jar"]
+CMD [ "spring", "index.js" ]
