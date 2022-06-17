@@ -2,11 +2,10 @@ FROM node:latest
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY /var/lib/jenkins/workspace/pet/spring-petclinic-1.5.1.jar /home/spring-petclinic-1.5.1.jar 
 
 RUN npm install
 
-COPY . .
-
 EXPOSE 4000
-CMD [ "spring", "index.js" ]
+
+CMD [ "spring", "index.js" 
